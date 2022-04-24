@@ -1,3 +1,30 @@
+# About my solution
+Task 1. is not entirely done (since the time bound was around 3hrs). I created a worker service that you can run using
+```none
+dotnet run -n Neude
+```
+I have have allowed all origin:
+```
+app.UseCors(builder =>
+{
+    builder
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader();
+});
+```
+Its for the testing purpose only of course.
+If there is a problem with ports (communication between Angular app and Api), you can adjust ports in environment.ts
+
+```
+export const environment = {
+  production: false,
+  ===> api: 'https://localhost:7033/api/'
+};
+```
+In task 3 i used google maps. I didnt include my billing account so the map is in the development mode (I hope its not a problem :))
+Since its not  a production mode, map could be a bit laggy (aspetially when there is so mutch markers). The idea would be just to add Google Marker Clustering to optimize markers when the map is zoomed out.
+
 # Keep Talking and Everybody Codes
 
 A repository for showing how you write and think about code.
