@@ -1,0 +1,106 @@
+<h1>Security cameras Utrecht</h1>
+<app-map *ngIf="cameras.length !== 0" [cameras]="cameras"></app-map>
+<div id="source">
+  source:
+  <a href="https://data.overheid.nl/dataset/camera-s">https://data.overheid.nl/dataset/camera-s</a>
+</div>
+<main>
+  <table id="cameraTableContainer">
+    <tbody>
+      <tr *ngIf="cameras.length !== 0">
+        <td>
+          <table id="column3">
+            <thead>
+              <tr>
+                <th colspan="4">Cameras 3</th>
+              </tr>
+              <tr>
+                <th>Number</th>
+                <th>Name</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of getCamerasFirstColumn()">
+                <td>{{c.camera.number}}</td>
+                <td>{{c.camera.camera}}</td>
+                <td>{{c.camera.latitude}}</td>
+                <td>{{c.camera.longitude}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td>
+          <table id="column5">
+            <thead>
+              <tr>
+                <th colspan="4">Cameras 5</th>
+              </tr>
+              <tr>
+                <th>Number</th>
+                <th>Name</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of getCamerasSecondColumn()">
+                <td>{{c.camera.number}}</td>
+                <td>{{c.camera.camera}}</td>
+                <td>{{c.camera.latitude}}</td>
+                <td>{{c.camera.longitude}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td>
+          <table id="column15">
+            <thead>
+              <tr>
+                <th colspan="4">Cameras 3 &amp; 5</th>
+              </tr>
+              <tr>
+                <th>Number</th>
+                <th>Name</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of getCamerasThirdColumn()">
+                <td>{{c.camera.number}}</td>
+                <td>{{c.camera.camera}}</td>
+                <td>{{c.camera.latitude}}</td>
+                <td>{{c.camera.longitude}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td>
+          <table id="columnOther">
+            <thead>
+              <tr>
+                <th colspan="4">Cameras Overig</th>
+              </tr>
+              <tr>
+                <th>Number</th>
+                <th>Name</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of getCamerasFourthColumn()">
+                <td>{{c.camera.number}}</td>
+                <td>{{c.camera.camera}}</td>
+                <td>{{c.camera.latitude}}</td>
+                <td>{{c.camera.longitude}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
